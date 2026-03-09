@@ -148,12 +148,12 @@ What do you know about me?
 ```
 
 
-# Build a Web Chat Interface with Streamlit
+## Build a Web Chat Interface with Streamlit
 ```sh
 pip install streamlit
 ```
 
-# Add "Clear Memory" Button to App
+## Add "Clear Memory" Button to App
 When clicked, the "Clear Memory" should:
 1. Delete all embeddings in agent_memory stored in Vector DB (Chroma DB)
 2. Clear session chat history (st.session_state.chat_history)
