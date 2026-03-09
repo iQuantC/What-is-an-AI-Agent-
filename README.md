@@ -106,3 +106,67 @@ Ask: What is the sqrt(16)?
 
 
 
+
+
+# 2. Adding Long-Term Memory with a Vector Database to AI Agent
+Agents need memory beyond chat history (long-term memory)
+
+This enables:
+
+    ✔ document understanding
+    ✔ knowledge base agents
+    ✔ personal assistants
+
+
+## How Memory Will Work
+```sh
+User input
+   ↓
+Retrieve relevant past memories from Chroma
+   ↓
+Inject into system prompt
+   ↓
+LLM reasoning + tools
+   ↓
+Store new conversation in vector DB
+```
+
+
+Updated Script: 
+```sh
+python agent-memory.py
+```
+
+Try: 
+```sh
+My name is Chris and I like DevOps.
+```
+
+Then later ask:
+```sh
+What do you know about me?
+```
+
+
+# Build a Web Chat Interface with Streamlit
+```sh
+pip install streamlit
+```
+
+# Add "Clear Memory" Button to App
+When clicked, the "Clear Memory" should:
+1. Delete all embeddings in agent_memory stored in Vector DB (Chroma DB)
+2. Clear session chat history (st.session_state.chat_history)
+3. Re-render the page
+4. Keep the LLM loaded
+
+Modify the app.py with the following changes:
+
+```sh
+streamlit run app_01.py
+```
+
+```sh
+http://localhost:8501
+```
+
